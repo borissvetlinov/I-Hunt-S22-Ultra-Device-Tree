@@ -5,7 +5,6 @@
 # mount point       fstype    device                                                                flags
 system              /system   ext4      ro                                                          wait,logical,first_stage_mount
 vendor              /vendor   ext4      ro                                                          wait,logical,first_stage_mount
-product             /product  ext4      ro                                                          wait,logical,first_stage_mount
 
 /metadata           ext4      /dev/block/platform/bootdevice/by-name/md_udc                         wait,check,formattable,first_stage_mount
 /data               f2fs      /dev/block/platform/bootdevice/by-name/userdata                       wait,check,quota,reservedsize=128M,formattable,resize,checkpoint=fs,fileencryption=aes-256-xts:aes-256-cts:v2,keydirectory=/metadata/vold/metadata_encryption
