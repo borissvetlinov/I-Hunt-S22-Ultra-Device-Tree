@@ -1,0 +1,27 @@
+# <mount_point>   <fstype>   <device>                <flags>
+# Logical Partitions
+/system           ext4       system                  flags=display="System";logical;first_stage_mount
+/vendor           ext4       vendor                  flags=display="Vendor";logical;first_stage_mount
+/product          ext4       product                 flags=display="Product";logical;first_stage_mount
+
+# Flashable Images
+/system_image     emmc       system                  flags=display="System Image";backup=1;flashimg=1;logical
+/vendor_image     emmc       vendor                  flags=display="Vendor Image";backup=1;flashimg=1;logical
+/product_image    emmc       product                 flags=display="Product Image";backup=1;flashimg=1;logical
+
+# Boot / Recovery / Data
+/boot             emmc       /dev/block/by-name/boot     flags=display="Boot";backup=1;flashimg=1
+/recovery         emmc       /dev/block/by-name/recovery flags=display="Recovery";backup=1;flashimg=1
+/dtbo             emmc       /dev/block/by-name/dtbo     flags=display="DTBO";backup=1;flashimg=1
+/vbmeta           emmc       /dev/block/by-name/vbmeta   flags=display="VBMeta";backup=1;flashimg=1
+
+# MediaTek Specific (IMEI/NVRAM)
+/nvram            emmc       /dev/block/by-name/nvram    flags=display="NVRAM";backup=1
+/nvdata           ext4       /dev/block/by-name/nvdata   flags=display="NVData";backup=1;subpartitionof=/nvram
+/nvcfg            ext4       /dev/block/by-name/nvcfg    flags=display="NVCfg";backup=1;subpartitionof=/nvram
+/protect_f        ext4       /dev/block/by-name/protect1 flags=display="Protect";backup=1
+/protect_s        ext4       /dev/block/by-name/protect2 flags=display="Protect_S";backup=1;subpartitionof=/protect_f
+
+# Removable
+/external_sd      auto       /devices/platform/externdevice* flags=display="MicroSD";storage;wipeingui;removable
+/usb_otg          auto       /devices/platform/mt_usb* flags=display="USB-OTG";storage;wipeingui;removable

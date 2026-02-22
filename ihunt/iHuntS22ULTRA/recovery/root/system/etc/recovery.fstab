@@ -1,0 +1,6 @@
+# <src>                                      <mnt_point>    <type>  <mnt_flags and options>                               <fs_mgr_flags>
+/dev/block/by-name/metadata                  /metadata      ext4    noatime,nosuid,nodev,discard                          wait,check,formattable,first_stage_mount
+/dev/block/by-name/userdata                  /data          f2fs    noatime,nosuid,nodev,discard,inlinecrypt              latemount,wait,check,quota,formattable,fileencryption=aes-256-xts:aes-256-cts:v2,keydirectory=/metadata/vold/metadata_encryption
+/dev/block/by-name/cache                     /cache         ext4    noatime,nosuid,nodev,noauto_da_alloc,discard          wait,check,formattable
+/dev/block/by-name/persist                   /mnt/vendor/persist    ext4    noatime,nosuid,nodev,noauto_da_alloc          wait,check,formattable
+/dev/block/by-name/para                      /misc          emmc    defaults                                              defaults
