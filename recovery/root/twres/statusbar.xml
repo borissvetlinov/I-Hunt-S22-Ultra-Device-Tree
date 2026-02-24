@@ -1,0 +1,1881 @@
+<?xml version="1.0"?>
+<recovery>
+	<templates>
+		<template name="statusbarinfo">
+
+			<fill color="#00000030">
+				<condition var1="tw_simulate_actions" var2="0"/>
+				<placement x="0" y="0" w="%screen_width%" h="%status_height%"/>
+			</fill>
+
+			<fill color="%text_fail_color%">
+				<condition var1="tw_simulate_actions" var2="1"/>
+				<placement x="0" y="0" w="%screen_width%" h="%status_height%"/>
+			</fill>
+
+		<!--STATUSBAR ALIGNMENT FOR LEFT SIDED CAMERA PUNCH HOLE-->
+		<!--LEFT SIDE CAMERA PUNCH HOLE DEFAULT ALIGNMENT-->
+			<text style="text_status">
+				<placement x="%center_x%" y="%status_info_y%" placement="5"/>
+				<conditions>
+					<condition var1="leftside_cph" var2="1"/>
+					<condition var1="all_right" var2="0"/>
+				</conditions>
+				<text>%tw_time%</text>
+			</text>
+
+			<text style="text_status_fail">
+				<placement x="1025" y="%status_info_y%" placement="1"/>
+				<conditions>
+					<condition var1="leftside_cph" var2="1"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="0"/>
+					<condition var1="tw_battery" op="&lt;" var2="15"/>
+				</conditions>
+				<text>%tw_battery%</text>
+			</text>
+
+			<text style="text_status">
+				<placement x="1025" y="%status_info_y%" placement="1"/>
+				<conditions>
+					<condition var1="leftside_cph" var2="1"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="16"/>
+					<condition var1="tw_battery" op="&lt;" var2="101"/>
+				</conditions>
+				<text>%tw_battery%</text>
+			</text>
+
+			<image>
+				<conditions>
+					<condition var1="leftside_cph" var2="1"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&lt;" var2="10"/>
+				</conditions>
+				<image resource="batt_10"/>
+				<placement x="%right_x%" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="leftside_cph" var2="1"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="11"/>
+					<condition var1="tw_battery" op="&lt;" var2="15"/>
+				</conditions>
+				<image resource="batt_15"/>
+				<placement x="%right_x%" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="leftside_cph" var2="1"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="16"/>
+					<condition var1="tw_battery" op="&lt;" var2="35"/>
+				</conditions>
+				<image resource="batt_30"/>
+				<placement x="%right_x%" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="leftside_cph" var2="1"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="36"/>
+					<condition var1="tw_battery" op="&lt;" var2="50"/>
+				</conditions>
+				<image resource="batt_45"/>
+				<placement x="%right_x%" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="leftside_cph" var2="1"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="51"/>
+					<condition var1="tw_battery" op="&lt;" var2="65"/>
+				</conditions>
+				<image resource="batt_60"/>
+				<placement x="%right_x%" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="leftside_cph" var2="1"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="66"/>
+					<condition var1="tw_battery" op="&lt;" var2="80"/>
+				</conditions>
+				<image resource="batt_75"/>
+				<placement x="%right_x%" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="leftside_cph" var2="1"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="81"/>
+					<condition var1="tw_battery" op="&lt;" var2="98"/>
+				</conditions>
+				<image resource="batt_90"/>
+				<placement x="%right_x%" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="leftside_cph" var2="1"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="99"/>
+					<condition var1="tw_battery" op="&lt;" var2="101"/>
+				</conditions>
+				<image resource="batt_full"/>
+				<placement x="%right_x%" y="19" placement="1"/>
+			</image>
+
+		<!--ADJUSTMENTS FOR RIGHT SIDE ALIGNMENT-->
+			<image>
+				<conditions>
+					<condition var1="leftside_cph" var2="1"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&lt;" var2="10"/>
+				</conditions>
+				<image resource="batt_10"/>
+				<placement x="855" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="leftside_cph" var2="1"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="11"/>
+					<condition var1="tw_battery" op="&lt;" var2="15"/>
+				</conditions>
+				<image resource="batt_15"/>
+				<placement x="855" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="leftside_cph" var2="1"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="16"/>
+					<condition var1="tw_battery" op="&lt;" var2="35"/>
+				</conditions>
+				<image resource="batt_30"/>
+				<placement x="855" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="leftside_cph" var2="1"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="36"/>
+					<condition var1="tw_battery" op="&lt;" var2="50"/>
+				</conditions>
+				<image resource="batt_45"/>
+				<placement x="855" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="leftside_cph" var2="1"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="51"/>
+					<condition var1="tw_battery" op="&lt;" var2="65"/>
+				</conditions>
+				<image resource="batt_60"/>
+				<placement x="855" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="leftside_cph" var2="1"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="66"/>
+					<condition var1="tw_battery" op="&lt;" var2="80"/>
+				</conditions>
+				<image resource="batt_75"/>
+				<placement x="855" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="leftside_cph" var2="1"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="81"/>
+					<condition var1="tw_battery" op="&lt;" var2="98"/>
+				</conditions>
+				<image resource="batt_90"/>
+				<placement x="855" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="leftside_cph" var2="1"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="99"/>
+					<condition var1="tw_battery" op="&lt;" var2="101"/>
+				</conditions>
+				<image resource="batt_full"/>
+				<placement x="855" y="19" placement="1"/>
+			</image>
+
+			<text style="text_status_fail">
+				<placement x="830" y="%status_info_y%" placement="1"/>
+				<conditions>
+					<condition var1="leftside_cph" var2="1"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="0"/>
+					<condition var1="tw_battery" op="&lt;" var2="15"/>
+				</conditions>
+				<text>%tw_battery%</text>
+			</text>
+
+			<text style="text_status">
+				<placement x="830" y="%status_info_y%" placement="1"/>
+				<conditions>
+					<condition var1="leftside_cph" var2="1"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="16"/>
+					<condition var1="tw_battery" op="&lt;" var2="101"/>
+				</conditions>
+				<text>%tw_battery%</text>
+			</text>
+
+			<text style="text_status">
+				<placement x="%right_x%" y="%status_info_y%" placement="1"/>
+				<conditions>
+					<condition var1="leftside_cph" var2="1"/>
+					<condition var1="all_right" var2="1"/>
+				</conditions>
+				<text>%tw_time%</text>
+			</text>
+		<!--ADJUSTMENTS FOR 24-HOUR CLOCK RIGHT SIDE ALIGNMENT-->
+			<image>
+				<conditions>
+					<condition var1="leftside_cph" var2="1"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&lt;" var2="10"/>
+				</conditions>
+				<image resource="batt_10"/>
+				<placement x="930" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="leftside_cph" var2="1"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="11"/>
+					<condition var1="tw_battery" op="&lt;" var2="15"/>
+				</conditions>
+				<image resource="batt_15"/>
+				<placement x="930" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="leftside_cph" var2="1"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="16"/>
+					<condition var1="tw_battery" op="&lt;" var2="35"/>
+				</conditions>
+				<image resource="batt_30"/>
+				<placement x="930" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="leftside_cph" var2="1"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="36"/>
+					<condition var1="tw_battery" op="&lt;" var2="50"/>
+				</conditions>
+				<image resource="batt_45"/>
+				<placement x="930" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="leftside_cph" var2="1"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="51"/>
+					<condition var1="tw_battery" op="&lt;" var2="65"/>
+				</conditions>
+				<image resource="batt_60"/>
+				<placement x="930" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="leftside_cph" var2="1"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="66"/>
+					<condition var1="tw_battery" op="&lt;" var2="80"/>
+				</conditions>
+				<image resource="batt_75"/>
+				<placement x="930" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="leftside_cph" var2="1"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="81"/>
+					<condition var1="tw_battery" op="&lt;" var2="98"/>
+				</conditions>
+				<image resource="batt_90"/>
+				<placement x="930" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="leftside_cph" var2="1"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="99"/>
+					<condition var1="tw_battery" op="&lt;" var2="101"/>
+				</conditions>
+				<image resource="batt_full"/>
+				<placement x="930" y="19" placement="1"/>
+			</image>
+
+			<text style="text_status_fail">
+				<placement x="905" y="%status_info_y%" placement="1"/>
+				<conditions>
+					<condition var1="leftside_cph" var2="1"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="0"/>
+					<condition var1="tw_battery" op="&lt;" var2="15"/>
+				</conditions>
+				<text>%tw_battery%</text>
+			</text>
+
+			<text style="text_status">
+				<placement x="905" y="%status_info_y%" placement="1"/>
+				<conditions>
+					<condition var1="leftside_cph" var2="1"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="16"/>
+					<condition var1="tw_battery" op="&lt;" var2="101"/>
+				</conditions>
+				<text>%tw_battery%</text>
+			</text>
+
+<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+
+		<!--STATUSBAR ALIGNMENT FOR RIGHT SIDED CAMERA PUNCH HOLE-->
+		<!--RIGHT SIDE CAMERA PUNCH HOLE DEFAULT ALIGNMENT-->
+			<text style="text_status">
+				<placement x="%center_x%" y="%status_info_y%" placement="5"/>
+				<conditions>
+					<condition var1="rightside_cph" var2="1"/>
+					<condition var1="all_left" var2="0"/>
+				</conditions>
+				<text>%tw_time%</text>
+			</text>
+
+			<text style="text_status_fail">
+				<placement x="60" y="%status_info_y%"/>
+				<conditions>
+					<condition var1="rightside_cph" var2="1"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="0"/>
+					<condition var1="tw_battery" op="&lt;" var2="15"/>
+				</conditions>
+				<text>%tw_battery%</text>
+			</text>
+
+			<text style="text_status">
+				<placement x="60" y="%status_info_y%"/>
+				<conditions>
+					<condition var1="rightside_cph" var2="1"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="16"/>
+					<condition var1="tw_battery" op="&lt;" var2="101"/>
+				</conditions>
+				<text>%tw_battery%</text>
+			</text>
+
+			<image>
+				<conditions>
+					<condition var1="rightside_cph" var2="1"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&lt;" var2="10"/>
+				</conditions>
+				<image resource="batt_10"/>
+				<placement x="%left_x%" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="rightside_cph" var2="1"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="11"/>
+					<condition var1="tw_battery" op="&lt;" var2="15"/>
+				</conditions>
+				<image resource="batt_15"/>
+				<placement x="%left_x%" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="rightside_cph" var2="1"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="16"/>
+					<condition var1="tw_battery" op="&lt;" var2="35"/>
+				</conditions>
+				<image resource="batt_30"/>
+				<placement x="%left_x%" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="rightside_cph" var2="1"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="36"/>
+					<condition var1="tw_battery" op="&lt;" var2="50"/>
+				</conditions>
+				<image resource="batt_45"/>
+				<placement x="%left_x%" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="rightside_cph" var2="1"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="51"/>
+					<condition var1="tw_battery" op="&lt;" var2="65"/>
+				</conditions>
+				<image resource="batt_60"/>
+				<placement x="%left_x%" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="rightside_cph" var2="1"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="66"/>
+					<condition var1="tw_battery" op="&lt;" var2="80"/>
+				</conditions>
+				<image resource="batt_75"/>
+				<placement x="%left_x%" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="rightside_cph" var2="1"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="81"/>
+					<condition var1="tw_battery" op="&lt;" var2="98"/>
+				</conditions>
+				<image resource="batt_90"/>
+				<placement x="%left_x%" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="rightside_cph" var2="1"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="99"/>
+					<condition var1="tw_battery" op="&lt;" var2="101"/>
+				</conditions>
+				<image resource="batt_full"/>
+				<placement x="%left_x%" y="19"/>
+			</image>
+
+		<!--ADJUSTMENTS FOR LEFT SIDE ALIGNMENT-->
+			<image>
+				<conditions>
+					<condition var1="rightside_cph" var2="1"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&lt;" var2="10"/>
+				</conditions>
+				<image resource="batt_10"/>
+				<placement x="225" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="rightside_cph" var2="1"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="11"/>
+					<condition var1="tw_battery" op="&lt;" var2="15"/>
+				</conditions>
+				<image resource="batt_15"/>
+				<placement x="225" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="rightside_cph" var2="1"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="16"/>
+					<condition var1="tw_battery" op="&lt;" var2="35"/>
+				</conditions>
+				<image resource="batt_30"/>
+				<placement x="225" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="rightside_cph" var2="1"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="36"/>
+					<condition var1="tw_battery" op="&lt;" var2="50"/>
+				</conditions>
+				<image resource="batt_45"/>
+				<placement x="225" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="rightside_cph" var2="1"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="51"/>
+					<condition var1="tw_battery" op="&lt;" var2="65"/>
+				</conditions>
+				<image resource="batt_60"/>
+				<placement x="225" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="rightside_cph" var2="1"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="66"/>
+					<condition var1="tw_battery" op="&lt;" var2="80"/>
+				</conditions>
+				<image resource="batt_75"/>
+				<placement x="225" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="rightside_cph" var2="1"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="81"/>
+					<condition var1="tw_battery" op="&lt;" var2="98"/>
+				</conditions>
+				<image resource="batt_90"/>
+				<placement x="225" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="rightside_cph" var2="1"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="99"/>
+					<condition var1="tw_battery" op="&lt;" var2="101"/>
+				</conditions>
+				<image resource="batt_full"/>
+				<placement x="225" y="19"/>
+			</image>
+
+			<text style="text_status_fail">
+				<placement x="260" y="%status_info_y%"/>
+				<conditions>
+					<condition var1="rightside_cph" var2="1"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="0"/>
+					<condition var1="tw_battery" op="&lt;" var2="15"/>
+				</conditions>
+				<text>%tw_battery%</text>
+			</text>
+
+			<text style="text_status">
+				<placement x="260" y="%status_info_y%"/>
+				<conditions>
+					<condition var1="rightside_cph" var2="1"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="16"/>
+					<condition var1="tw_battery" op="&lt;" var2="101"/>
+				</conditions>
+				<text>%tw_battery%</text>
+			</text>
+
+			<text style="text_status">
+				<placement x="%left_x%" y="%status_info_y%"/>
+				<conditions>
+					<condition var1="rightside_cph" var2="1"/>
+					<condition var1="all_left" var2="1"/>
+				</conditions>
+				<text>%tw_time%</text>
+			</text>
+		<!--ADJUSTMENTS FOR 24-HOUR CLOCK LEFT SIDE ALIGNMENT-->
+			<image>
+				<conditions>
+					<condition var1="rightside_cph" var2="1"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&lt;" var2="10"/>
+				</conditions>
+				<image resource="batt_10"/>
+				<placement x="150" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="rightside_cph" var2="1"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="11"/>
+					<condition var1="tw_battery" op="&lt;" var2="15"/>
+				</conditions>
+				<image resource="batt_15"/>
+				<placement x="150" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="rightside_cph" var2="1"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="16"/>
+					<condition var1="tw_battery" op="&lt;" var2="35"/>
+				</conditions>
+				<image resource="batt_30"/>
+				<placement x="150" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="rightside_cph" var2="1"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="36"/>
+					<condition var1="tw_battery" op="&lt;" var2="50"/>
+				</conditions>
+				<image resource="batt_45"/>
+				<placement x="150" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="rightside_cph" var2="1"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="51"/>
+					<condition var1="tw_battery" op="&lt;" var2="65"/>
+				</conditions>
+				<image resource="batt_60"/>
+				<placement x="150" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="rightside_cph" var2="1"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="66"/>
+					<condition var1="tw_battery" op="&lt;" var2="80"/>
+				</conditions>
+				<image resource="batt_75"/>
+				<placement x="150" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="rightside_cph" var2="1"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="81"/>
+					<condition var1="tw_battery" op="&lt;" var2="98"/>
+				</conditions>
+				<image resource="batt_90"/>
+				<placement x="150" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="rightside_cph" var2="1"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="99"/>
+					<condition var1="tw_battery" op="&lt;" var2="101"/>
+				</conditions>
+				<image resource="batt_full"/>
+				<placement x="150" y="19"/>
+			</image>
+
+			<text style="text_status_fail">
+				<placement x="185" y="%status_info_y%"/>
+				<conditions>
+					<condition var1="rightside_cph" var2="1"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="0"/>
+					<condition var1="tw_battery" op="&lt;" var2="15"/>
+				</conditions>
+				<text>%tw_battery%</text>
+			</text>
+
+			<text style="text_status">
+				<placement x="185" y="%status_info_y%"/>
+				<conditions>
+					<condition var1="rightside_cph" var2="1"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="16"/>
+					<condition var1="tw_battery" op="&lt;" var2="101"/>
+				</conditions>
+				<text>%tw_battery%</text>
+			</text>
+
+<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+
+		<!--STATUSBAR ALIGNMENT FOR CENTERED CAMERA PUNCH HOLE-->
+		<!--CENTERED CAMERA PUNCH HOLE DEFAULT ALIGNMENT-->
+			<text style="text_status">
+				<placement x="%left_x%" y="%status_info_y%"/>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="center_clock" var2="0"/>
+				</conditions>
+				<text>%tw_time%</text>
+			</text>
+
+			<text style="text_status">
+				<placement x="%center_x%" y="%status_info_y%" placement="5"/>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="center_clock" var2="1"/>
+				</conditions>
+				<text>%tw_time%</text>
+			</text>
+
+			<text style="text_status_fail">
+				<placement x="1025" y="%status_info_y%" placement="1"/>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="0"/>
+					<condition var1="tw_battery" op="&lt;" var2="15"/>
+				</conditions>
+				<text>%tw_battery%</text>
+			</text>
+
+			<text style="text_status">
+				<placement x="1025" y="%status_info_y%" placement="1"/>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="16"/>
+					<condition var1="tw_battery" op="&lt;" var2="101"/>
+				</conditions>
+				<text>%tw_battery%</text>
+			</text>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&lt;" var2="10"/>
+				</conditions>
+				<image resource="batt_10"/>
+				<placement x="%right_x%" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="11"/>
+					<condition var1="tw_battery" op="&lt;" var2="15"/>
+				</conditions>
+				<image resource="batt_15"/>
+				<placement x="%right_x%" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="16"/>
+					<condition var1="tw_battery" op="&lt;" var2="35"/>
+				</conditions>
+				<image resource="batt_30"/>
+				<placement x="%right_x%" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="36"/>
+					<condition var1="tw_battery" op="&lt;" var2="50"/>
+				</conditions>
+				<image resource="batt_45"/>
+				<placement x="%right_x%" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="51"/>
+					<condition var1="tw_battery" op="&lt;" var2="65"/>
+				</conditions>
+				<image resource="batt_60"/>
+				<placement x="%right_x%" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="66"/>
+					<condition var1="tw_battery" op="&lt;" var2="80"/>
+				</conditions>
+				<image resource="batt_75"/>
+				<placement x="%right_x%" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="81"/>
+					<condition var1="tw_battery" op="&lt;" var2="98"/>
+				</conditions>
+				<image resource="batt_90"/>
+				<placement x="%right_x%" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="99"/>
+					<condition var1="tw_battery" op="&lt;" var2="101"/>
+				</conditions>
+				<image resource="batt_full"/>
+				<placement x="%right_x%" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" op="=" var2="1"/>
+					<condition var1="show_cpu_temp" op="=" var2="1"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="center_clock" var2="0"/>
+				</conditions>
+				<image resource="cpu_temp"/>
+				<placement x="240" y="12"/>
+			</image>
+
+			<text style="text_status">
+				<conditions>
+					<condition var1="center_cph" op="=" var2="1"/>
+					<condition var1="show_cpu_temp" op="=" var2="1"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="center_clock" var2="0"/>
+				</conditions>
+				<placement x="285" y="%status_info_y%"/>
+				<text>%tw_cpu_temp% &#xB0;C</text>
+			</text>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" op="=" var2="1"/>
+					<condition var1="show_cpu_temp" op="=" var2="1"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="center_clock" var2="0"/>
+				</conditions>
+				<image resource="cpu_temp"/>
+				<placement x="200" y="12"/>
+			</image>
+
+			<text style="text_status">
+				<conditions>
+					<condition var1="center_cph" op="=" var2="1"/>
+					<condition var1="show_cpu_temp" op="=" var2="1"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="center_clock" var2="0"/>
+				</conditions>
+				<placement x="245" y="%status_info_y%"/>
+				<text>%tw_cpu_temp% &#xB0;C</text>
+			</text>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" op="=" var2="1"/>
+					<condition var1="show_cpu_temp" op="=" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="center_clock" var2="1"/>
+				</conditions>
+				<image resource="cpu_temp"/>
+				<placement x="%left_x%" y="12"/>
+			</image>
+
+			<text style="text_status">
+				<conditions>
+					<condition var1="center_cph" op="=" var2="1"/>
+					<condition var1="show_cpu_temp" op="=" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="center_clock" var2="1"/>
+				</conditions>
+				<placement x="75" y="%status_info_y%"/>
+				<text>%tw_cpu_temp% &#xB0;C</text>
+			</text>
+		<!--ADJUSTMENTS FOR POSITION SWAP-->
+			<image>
+				<conditions>
+					<condition var1="center_cph" op="=" var2="1"/>
+					<condition var1="show_cpu_temp" op="=" var2="1"/>
+					<condition var1="swap_x" var2="1"/>
+					<condition var1="center_clock" var2="0"/>
+				</conditions>
+				<image resource="cpu_temp"/>
+				<placement x="200" y="12"/>
+			</image>
+
+			<text style="text_status">
+				<conditions>
+					<condition var1="center_cph" op="=" var2="1"/>
+					<condition var1="show_cpu_temp" op="=" var2="1"/>
+					<condition var1="swap_x" var2="1"/>
+					<condition var1="center_clock" var2="0"/>
+				</conditions>
+				<placement x="245" y="%status_info_y%"/>
+				<text>%tw_cpu_temp% &#xB0;C</text>
+			</text>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" op="=" var2="1"/>
+					<condition var1="show_cpu_temp" op="=" var2="1"/>
+					<condition var1="swap_x" var2="1"/>
+					<condition var1="center_clock" var2="1"/>
+				</conditions>
+				<image resource="cpu_temp"/>
+				<placement x="1060" y="12" placement="1"/>
+			</image>
+
+			<text style="text_status">
+				<conditions>
+					<condition var1="center_cph" op="=" var2="1"/>
+					<condition var1="show_cpu_temp" op="=" var2="1"/>
+					<condition var1="swap_x" var2="1"/>
+					<condition var1="center_clock" var2="1"/>
+				</conditions>
+				<placement x="1015" y="%status_info_y%" placement="1"/>
+				<text>%tw_cpu_temp% &#xB0;C</text>
+			</text>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="1"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&lt;" var2="10"/>
+				</conditions>
+				<image resource="batt_10"/>
+				<placement x="%left_x%" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="1"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="11"/>
+					<condition var1="tw_battery" op="&lt;" var2="15"/>
+				</conditions>
+				<image resource="batt_15"/>
+				<placement x="%left_x%" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="1"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="16"/>
+					<condition var1="tw_battery" op="&lt;" var2="35"/>
+				</conditions>
+				<image resource="batt_30"/>
+				<placement x="%left_x%" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="1"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="36"/>
+					<condition var1="tw_battery" op="&lt;" var2="50"/>
+				</conditions>
+				<image resource="batt_45"/>
+				<placement x="%left_x%" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="1"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="51"/>
+					<condition var1="tw_battery" op="&lt;" var2="65"/>
+				</conditions>
+				<image resource="batt_60"/>
+				<placement x="%left_x%" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="1"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="66"/>
+					<condition var1="tw_battery" op="&lt;" var2="80"/>
+				</conditions>
+				<image resource="batt_75"/>
+				<placement x="%left_x%" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="1"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="81"/>
+					<condition var1="tw_battery" op="&lt;" var2="98"/>
+				</conditions>
+				<image resource="batt_90"/>
+				<placement x="%left_x%" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="1"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="99"/>
+					<condition var1="tw_battery" op="&lt;" var2="101"/>
+				</conditions>
+				<image resource="batt_full"/>
+				<placement x="%left_x%" y="19"/>
+			</image>
+
+			<text style="text_status_fail">
+				<placement x="60" y="%status_info_y%"/>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="1"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="0"/>
+					<condition var1="tw_battery" op="&lt;" var2="15"/>
+				</conditions>
+				<text>%tw_battery%</text>
+			</text>
+
+			<text style="text_status">
+				<placement x="60" y="%status_info_y%"/>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="1"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="16"/>
+					<condition var1="tw_battery" op="&lt;" var2="101"/>
+				</conditions>
+				<text>%tw_battery%</text>
+			</text>
+
+			<text style="text_status">
+				<placement x="%right_x%" y="%status_info_y%" placement="1"/>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="1"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="center_clock" var2="0"/>
+				</conditions>
+				<text>%tw_time%</text>
+			</text>
+
+			<text style="text_status">
+				<placement x="%center_x%" y="%status_info_y%" placement="5"/>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="1"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="center_clock" var2="1"/>
+				</conditions>
+				<text>%tw_time%</text>
+			</text>
+		<!--ADJUSTMENTS FOR RIGHT SIDE ALIGNMENT FOR CENTERED CAMERA PUNCH HOLE-->
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&lt;" var2="10"/>
+				</conditions>
+				<image resource="batt_10"/>
+				<placement x="855" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="11"/>
+					<condition var1="tw_battery" op="&lt;" var2="15"/>
+				</conditions>
+				<image resource="batt_15"/>
+				<placement x="855" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="16"/>
+					<condition var1="tw_battery" op="&lt;" var2="35"/>
+				</conditions>
+				<image resource="batt_30"/>
+				<placement x="855" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="36"/>
+					<condition var1="tw_battery" op="&lt;" var2="50"/>
+				</conditions>
+				<image resource="batt_45"/>
+				<placement x="855" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="51"/>
+					<condition var1="tw_battery" op="&lt;" var2="65"/>
+				</conditions>
+				<image resource="batt_60"/>
+				<placement x="855" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="66"/>
+					<condition var1="tw_battery" op="&lt;" var2="80"/>
+				</conditions>
+				<image resource="batt_75"/>
+				<placement x="855" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="81"/>
+					<condition var1="tw_battery" op="&lt;" var2="98"/>
+				</conditions>
+				<image resource="batt_90"/>
+				<placement x="855" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="99"/>
+					<condition var1="tw_battery" op="&lt;" var2="101"/>
+				</conditions>
+				<image resource="batt_full"/>
+				<placement x="855" y="19" placement="1"/>
+			</image>
+
+			<text style="text_status_fail">
+				<placement x="830" y="%status_info_y%" placement="1"/>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="0"/>
+					<condition var1="tw_battery" op="&lt;" var2="15"/>
+				</conditions>
+				<text>%tw_battery%</text>
+			</text>
+
+			<text style="text_status">
+				<placement x="830" y="%status_info_y%" placement="1"/>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="16"/>
+					<condition var1="tw_battery" op="&lt;" var2="101"/>
+				</conditions>
+				<text>%tw_battery%</text>
+			</text>
+
+			<text style="text_status">
+				<placement x="%right_x%" y="%status_info_y%" placement="1"/>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="all_left" var2="0"/>
+				</conditions>
+				<text>%tw_time%</text>
+			</text>
+		<!--ADJUSTMENTS FOR 24-HOUR CLOCK RIGHT SIDE ALIGNMENT FOR CENTERED CAMERA PUNCH HOLE-->
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&lt;" var2="10"/>
+				</conditions>
+				<image resource="batt_10"/>
+				<placement x="930" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="11"/>
+					<condition var1="tw_battery" op="&lt;" var2="15"/>
+				</conditions>
+				<image resource="batt_15"/>
+				<placement x="930" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="16"/>
+					<condition var1="tw_battery" op="&lt;" var2="35"/>
+				</conditions>
+				<image resource="batt_30"/>
+				<placement x="930" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="36"/>
+					<condition var1="tw_battery" op="&lt;" var2="50"/>
+				</conditions>
+				<image resource="batt_45"/>
+				<placement x="930" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="51"/>
+					<condition var1="tw_battery" op="&lt;" var2="65"/>
+				</conditions>
+				<image resource="batt_60"/>
+				<placement x="930" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="66"/>
+					<condition var1="tw_battery" op="&lt;" var2="80"/>
+				</conditions>
+				<image resource="batt_75"/>
+				<placement x="930" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="81"/>
+					<condition var1="tw_battery" op="&lt;" var2="98"/>
+				</conditions>
+				<image resource="batt_90"/>
+				<placement x="930" y="19" placement="1"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="99"/>
+					<condition var1="tw_battery" op="&lt;" var2="101"/>
+				</conditions>
+				<image resource="batt_full"/>
+				<placement x="930" y="19" placement="1"/>
+			</image>
+
+			<text style="text_status_fail">
+				<placement x="905" y="%status_info_y%" placement="1"/>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="0"/>
+					<condition var1="tw_battery" op="&lt;" var2="15"/>
+				</conditions>
+				<text>%tw_battery%</text>
+			</text>
+
+			<text style="text_status">
+				<placement x="905" y="%status_info_y%" placement="1"/>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="1"/>
+					<condition var1="all_left" var2="0"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="16"/>
+					<condition var1="tw_battery" op="&lt;" var2="101"/>
+				</conditions>
+				<text>%tw_battery%</text>
+			</text>
+		<!--ADJUSTMENTS FOR LEFT SIDE ALIGNMENT FOR CENTERED CAMERA PUNCH HOLE-->
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&lt;" var2="10"/>
+				</conditions>
+				<image resource="batt_10"/>
+				<placement x="225" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="11"/>
+					<condition var1="tw_battery" op="&lt;" var2="15"/>
+				</conditions>
+				<image resource="batt_15"/>
+				<placement x="225" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="16"/>
+					<condition var1="tw_battery" op="&lt;" var2="35"/>
+				</conditions>
+				<image resource="batt_30"/>
+				<placement x="225" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="36"/>
+					<condition var1="tw_battery" op="&lt;" var2="50"/>
+				</conditions>
+				<image resource="batt_45"/>
+				<placement x="225" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="51"/>
+					<condition var1="tw_battery" op="&lt;" var2="65"/>
+				</conditions>
+				<image resource="batt_60"/>
+				<placement x="225" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="66"/>
+					<condition var1="tw_battery" op="&lt;" var2="80"/>
+				</conditions>
+				<image resource="batt_75"/>
+				<placement x="225" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="81"/>
+					<condition var1="tw_battery" op="&lt;" var2="98"/>
+				</conditions>
+				<image resource="batt_90"/>
+				<placement x="225" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="99"/>
+					<condition var1="tw_battery" op="&lt;" var2="101"/>
+				</conditions>
+				<image resource="batt_full"/>
+				<placement x="225" y="19"/>
+			</image>
+
+			<text style="text_status_fail">
+				<placement x="260" y="%status_info_y%"/>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="0"/>
+					<condition var1="tw_battery" op="&lt;" var2="15"/>
+				</conditions>
+				<text>%tw_battery%</text>
+			</text>
+
+			<text style="text_status">
+				<placement x="260" y="%status_info_y%"/>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="0"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="16"/>
+					<condition var1="tw_battery" op="&lt;" var2="101"/>
+				</conditions>
+				<text>%tw_battery%</text>
+			</text>
+
+			<text style="text_status">
+				<placement x="%left_x%" y="%status_info_y%"/>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="1"/>
+				</conditions>
+				<text>%tw_time%</text>
+			</text>
+		<!--ADJUSTMENTS FOR 24-HOUR CLOCK LEFT SIDE ALIGNMENT FOR CENTERED CAMERA PUNCH HOLE-->
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&lt;" var2="10"/>
+				</conditions>
+				<image resource="batt_10"/>
+				<placement x="150" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="11"/>
+					<condition var1="tw_battery" op="&lt;" var2="15"/>
+				</conditions>
+				<image resource="batt_15"/>
+				<placement x="150" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="16"/>
+					<condition var1="tw_battery" op="&lt;" var2="35"/>
+				</conditions>
+				<image resource="batt_30"/>
+				<placement x="150" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="36"/>
+					<condition var1="tw_battery" op="&lt;" var2="50"/>
+				</conditions>
+				<image resource="batt_45"/>
+				<placement x="150" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="51"/>
+					<condition var1="tw_battery" op="&lt;" var2="65"/>
+				</conditions>
+				<image resource="batt_60"/>
+				<placement x="150" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="66"/>
+					<condition var1="tw_battery" op="&lt;" var2="80"/>
+				</conditions>
+				<image resource="batt_75"/>
+				<placement x="150" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="81"/>
+					<condition var1="tw_battery" op="&lt;" var2="98"/>
+				</conditions>
+				<image resource="batt_90"/>
+				<placement x="150" y="19"/>
+			</image>
+
+			<image>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="99"/>
+					<condition var1="tw_battery" op="&lt;" var2="101"/>
+				</conditions>
+				<image resource="batt_full"/>
+				<placement x="150" y="19"/>
+			</image>
+
+			<text style="text_status_fail">
+				<placement x="185" y="%status_info_y%"/>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="0"/>
+					<condition var1="tw_battery" op="&lt;" var2="15"/>
+				</conditions>
+				<text>%tw_battery%</text>
+			</text>
+
+			<text style="text_status">
+				<placement x="185" y="%status_info_y%"/>
+				<conditions>
+					<condition var1="center_cph" var2="1"/>
+					<condition var1="swap_x" var2="0"/>
+					<condition var1="all_right" var2="0"/>
+					<condition var1="all_left" var2="1"/>
+					<condition var1="tw_military_time" var2="1"/>
+					<condition var1="tw_no_battery_percent" var2="0"/>
+					<condition var1="tw_battery" op="&gt;" var2="16"/>
+					<condition var1="tw_battery" op="&lt;" var2="101"/>
+				</conditions>
+				<text>%tw_battery%</text>
+			</text>
+		</template>
+	</templates>
+</recovery>
